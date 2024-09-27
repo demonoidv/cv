@@ -10,6 +10,7 @@
 % Jan Vorisek (jan@vorisek.me)
 % Based on a template by Jan Küster (info@jankuester.com)
 % Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+% Modified for his need by Valentin Sporer (v@sporer.fr)
 %
 % License:
 % The MIT License (see included LICENSE file)
@@ -33,16 +34,11 @@
 %----------------------------------------------------------------------------------------
 
 \setlength{\parindent}{0mm} % Suppress paragraph indentation
-
 \usepackage[hidelinks]{hyperref} % Required for links but hide the default boxes around links
-
 \newcommand{\lorem}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.} % Dummy text
-
 \pagestyle{empty} % No headers or footers
-
 \usepackage{moresize} % Provides more font size commands (\HUGE and \ssmall)
-
-\usepackage{setspace}
+\usepackage{setspace} % More control over line spacing
 
 %----------------------------------------------------------------------------------------
 %	PAGE LAYOUT
@@ -84,8 +80,7 @@
 
 % Command to output an icon in a square box colored with primary color with text to the right
 \newcommand{\icon}[3]{% The first parameter is the FontAwesome icon name, the second is the box size and the third is the text
-%	\vcenteredhbox{\colorbox{primary}{\makebox(#2, #2){\textcolor{white}{\large\csname fa#1\endcsname}}}}% Icon and box
-	\vcenteredhbox{\textcolor{primary}{\large\csname fa#1\endcsname}}% Icon and box
+	\vcenteredhbox{\colorbox{white}{\makebox(#2, #2){\textcolor{primary}{\large\csname fa#1\endcsname}}}}% Icon and box
 	\hspace{0.2cm}% Whitespace
 	\vcenteredhbox{\textcolor{black}{#3}}% Text
 }
@@ -97,7 +92,7 @@
 
 %----------------------------------------------------------------------------------------
 %	GRAPHICS DEFINITIONS
-%---------------------------------------------------------------------------------------- 
+%----------------------------------------------------------------------------------------
 
 \usepackage{tikz} % Required for creating the plots
 \usepackage{xcolor}
@@ -124,13 +119,11 @@
 	\endgroup%
 }
 
-% Command to place a picture
+% Command to place a picture with a black frame
 \newcommand{\photo}[2]{% First parameter is the width ratio of the picture (0.9 gives a picture filling 90% of width of the line). Second parameter is the relative path to the picture file
-	{
-		\setlength{\fboxsep}{0pt}
-		\setlength{\fboxrule}{2pt}
-		\fcolorbox{black}{white}{\includegraphics[width=#1\linewidth]{#2}}
-	}
+	\setlength{\fboxsep}{0pt}
+	\setlength{\fboxrule}{2pt}
+	\fcolorbox{black}{white}{\includegraphics[width=#1\linewidth]{#2}}
 }
 
 %----------------------------------------------------------------------------------------
@@ -143,23 +136,23 @@
 \newenvironment{barchart}[1]{ % The only parameter is the maximum bar width, in cm
 	\newcommand{\barwidth}{0.35}
 	\newcommand{\barsep}{0.2}
-	
+
 	% Command to add a bar to the bar chart
 	\newcommand{\baritem}[2]{ % The first argument is the bar label and the second is the percentage the current bar should take up of the total width
 		\pgfmathparse{##2}
 		\let\perc\pgfmathresult
-		
+
 		\pgfmathparse{#1}
 		\let\barsize\pgfmathresult
-		
+
 		\pgfmathparse{\barsize*##2/100}
 		\let\barone\pgfmathresult
-		
+
 		\pgfmathparse{(\barwidth*\thebarcount)+(\barsep*\thebarcount)}
 		\let\barx\pgfmathresult
-		
+
 		\filldraw[fill=secondary, draw=none] (0,-\barx) rectangle (\barone,-\barx-\barwidth);
-		
+
 		\node [label=180:\colorbox{primary}{\textcolor{white}{##1}}] at (0,-\barx-0.175) {};
 		\addtocounter{barcount}{1}
 	}
@@ -167,32 +160,6 @@
 		\setcounter{barcount}{0}
 }{
 	\end{tikzpicture}
-}
-
-%------------------------------------------------
-
-\newcounter{a}
-\newcounter{b}
-\newcounter{c}
-
-% Command to output a number of automatically-sized bubbles from a string in the format of '<size>/<label>', e.g. \bubbles{5/Eclipse, 6/git, 4/Office, 3/Inkscape, 3/Blender}
-\newcommand{\bubbles}[1]{
-	% Reset counters
-	\setcounter{a}{0}
-	\setcounter{c}{150}
-	
-	\begin{tikzpicture}[scale=3]
-		\foreach \p/\t in {#1} {
-			\addtocounter{a}{1}
-			\bubble{\thea/2}{\theb}{\p/25}{\t}{1\p0}
-		}
-	\end{tikzpicture}
-}
-
-% Command to output a bubble at a specific position with a specific size
-\newcommand{\bubble}[5]{
-	\filldraw[fill=primary, draw=none] (#1,0.5) circle (#3); % Bubble
-	\node[label=\textcolor{black}{#4}] at (#1,0.7) {}; % Label
 }
 
 %----------------------------------------------------------------------------------------
@@ -235,33 +202,3 @@
 
 % Command to output a separator slash between lists, e.g. '  /  '
 \newcommand{\slashsep}{\hspace{3mm}/\hspace{3mm}}
-
-%----------------------------------------------------------------------------------------
-%	CUSTOM FRAME
-%----------------------------------------------------------------------------------------
-\usepackage{mdframed}
-
-\newenvironment{coloredframe}[1][]{% The only parameter is the title text
-%	\mdfsetup{%
-%		frametitle={%
-%			\tikz[baseline=(current bounding box.east),outer sep=0pt]
-%			\node[anchor=east,rectangle,fill=primary,right]
-%			{\textcolor{white}{\MakeUppercase{\textbf{#1}}}};%
-%		}%
-%	}%
-	\mdfsetup{%
-		frametitle={%
-			\tikz[baseline=(current bounding box.east),outer sep=0pt]
-			\node[anchor=east,rectangle,fill=primary]
-			{\textcolor{white}{\MakeUppercase{\textbf{#1}}}};%
-		},%
-%		frametitle=Test,%
-		innermargin=0.2pt,%
-		frametitlealignment=\center,%
-		linecolor=primary,%
-		linewidth=2pt,%
-		topline=true,%
-		frametitleaboveskip=-0.5\baselineskip,%
-	}
-	\begin{mdframed}[]\relax%
-}{\end{mdframed}}
