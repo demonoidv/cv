@@ -1,0 +1,194 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Valentin Sporer CV
+% Version 1.0 (26/09/2024)
+%
+% Authors:
+% Valentin Sporer (v@sporer.fr) using the Developer CV template frrom
+% http://www.LaTeXTemplates.com
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[8pt]{developercv} % Default font size, values from 8-12pt are recommended
+\setsecondarycolor{HTML}{71b70e}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+% Picture
+\begin{minipage}[t]{0.15\textwidth} % 15% of the page width for photo
+	\vspace{-\baselineskip}
+	\photo{0.9}{photo_FHD.png} % Picture of me filling 90% of the minipage width
+\end{minipage}
+% Name and title
+\begin{minipage}[t]{0.50\textwidth} % 50% of the page width for name
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\colorbox{primary}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Valentin}}}}}
+	\colorbox{primary}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Sporer}}}}}
+
+	\vspace{6pt}
+
+	{\huge\coloredtextbf{Software Engineer}} % Job title
+\end{minipage}
+\hfill
+% General info
+\begin{minipage}[t]{0.3\textwidth} % 30% of the page width for the second row of icons
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\icon{MapMarker}{12}{Poitiers, FRANCE}\\
+	\icon{Phone}{12}{+33 6 22 95 39 20}\\
+	\icon{At}{12}{\href{mailto:v@sporer.fr}{v@sporer.fr}}\\
+	\icon{BirthdayCake}{12}{29 years old}\\
+	\icon{Github}{12}{\href{https://github.com/demonoidv}{github.com/demonoidv}}\\
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION, SKILLS AND TECHNOLOGIES
+%----------------------------------------------------------------------------------------
+\vfill % For consistent vertical spacing between sections
+\cvsect{Who am I?}
+
+\begin{minipage}[t]{0.5\textwidth} % 50% of the page width for the introduction text
+	\vspace{-0.5\baselineskip} % Required for vertically aligning minipages
+
+	Mainly a back-end developer with an interest in front-end, I am pragmatic and versatile.\\
+	I love learning and easily adapt to new languages and technologies, as evidenced by my recent experiences.\\
+	I enjoy teamwork, but I am also comfortable working independently.\\
+
+	I am currently seeking a new challenge through projects that have a tangible and beneficial impact on people's lives, such as privacy and personal data protection or the health sector.
+\end{minipage}
+\hfill % Horizontal space between intro and programming language skills chart
+\begin{minipage}[t]{0.45\textwidth} % 45% of the page for the skills bar chart
+	\vspace{-1.5\baselineskip} % Required for vertically aligning minipages
+	\begin{barchart}{5.5}
+		\baritem{Kotlin}{70}
+		\baritem{TypeScript}{50}
+		\baritem{SQL}{60}
+		\baritem{Rust}{70}
+		\baritem{C\#}{100}
+		\baritem{C++}{60}
+		\baritem{Python}{30}
+		\baritem{C}{80}
+	\end{barchart}
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+\vfill % For consistent vertical spacing between sections
+\cvsect{Professional Experience}
+
+\begin{entrylist}
+	\entry
+		{2021 -- today\\\footnotesize{2 years et 10 months}}
+		{Software Engineer}
+		{Tenable}
+		{
+			Maintenance and improvement of C\#, TypeScript (Node.js), SQL, and Rust code for nearly two years, then exclusively working with Kotlin,
+			SQL, and TypeScript/React for the \emph{Tenable Identity Exposure} and \emph{Tenable One} applications.\\
+			\texttt{C\#}\slashsep\texttt{Node.JS}\slashsep\texttt{SQL}\slashsep\texttt{.NET}\slashsep\texttt{Rust}\slashsep\texttt{Kotlin}\slashsep\texttt{TypeScript}\slashsep\texttt{React}
+		}
+	\entry
+		{2020 -- 2021\\\footnotesize{2 years \emph{part-time}}}
+		{Software Engineer - Apprentice}
+		{Alsid / Tenable}
+		{
+			Maintenance and improvement of C, C++, C\#, TypeScript (Node.JS), SQL code across most back-end services. Writing a Windows event collection agent in Rust\footnotemark[1].\\
+			\texttt{C}\slashsep\texttt{C++}\slashsep\texttt{C\#}\slashsep\texttt{Node.JS}\slashsep\texttt{SQL}\slashsep\texttt{.NET}\slashsep\texttt{Rust}\slashsep\texttt{Win32 API}
+		}
+	\entry
+		{2018 -- 2020\\\footnotesize{13 months \emph{part-time}}}
+		{Junior Software Engineer}
+		{Alsid}
+		{
+			Primary maintainer of the two programs I optimized during my previous internship. Developed the new security analysis engine in C\#/.NET. Migrated PowerShell code to C\#.\\
+			\texttt{C}\slashsep\texttt{C++}\slashsep\texttt{C\#}\slashsep\texttt{PowerShell}\slashsep\texttt{.NET}\slashsep\texttt{Win32 API}\slashsep\texttt{Active Directory}
+		}
+	\entry
+		{2018\\\footnotesize{6 months \emph{internship}}}
+		{System Developer  - Intern}
+		{Alsid}
+		{
+			Internship focused on massive parallelization and optimization (multi-threading + buffering) of two programs in C and C++ at the core of \emph{Alsid For AD} (now \emph{Tenable Identity Exposure}).
+			Developed testing tools in Python and PowerShell.\\
+			\texttt{C}\slashsep\texttt{C++}\slashsep\texttt{Python}\slashsep\texttt{PowerShell}\slashsep\texttt{Win32 API}\slashsep\texttt{Active Directory}
+		}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\vfill % For consistent vertical spacing between sections
+\cvsect{Education}
+
+\begin{entrylist}
+	\entry
+		{2016 -- 2021}
+		{Expert in Computer Science and Information Systems\\\footnotesize{(RNCP Level 7, French National Directory of Professional Certifications. Bac +5)}}
+		{42 School Paris}
+		{
+			Training in various areas of computer science: algorithms, graphics, UNIX systems, security, video games, web...\\
+			I learned to develop almost from scratch, initially in C, then in Rust and Assembly, specializing in low-level application development and security.
+		}
+	\entry
+		{2013 -- 2015}
+		{BTS (Brevet de Technicien Superieur) ERO \footnotesize{(Bac +2)}}
+		{Val de Garonne High School}
+		{
+			BTS in Study and Production of Forming Tools. Very high precision machining.\\
+			3D design and fabrication of molds for series plastic injection through machining of steel blocks.
+		}
+	\entry
+		{2010 - 2013}
+		{Vocational Baccalaureate in Molding Technician}
+		{Mas Jambost Technical High School}
+		{
+			Vocational Baccalaureate in the Design and Production of Models, Prototypes, and Molds for Foundry.
+		}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL INFORMATION
+%----------------------------------------------------------------------------------------
+\vfill % For consistent vertical spacing between sections
+\begin{minipage}[t]{0.2\textwidth} % Languages section, 20% of page width
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\cvsect{Languages}
+
+	\coloredtextbf{French} - Native\\
+	\coloredtextbf{English} - Advanced\\
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.35\textwidth} % Hobbies section, 35% of page width
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\cvsect{Hobbies}
+
+	I enjoy setting up my NAS and home network. Assembling and maintaining my machines. I practice archery as well as 3D design and printing.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.35\textwidth} % Tools section, 35% of page width
+	\vspace{-\baselineskip} % Required for vertically aligning minipages
+
+	\cvsect{Tools}
+
+	Git, Docker, OpenAPI, Vim, IntelliJ, Visual Studio, VS Code, Rider, Rust Rover, Grafana, Datadog, Sentry, Kafka, RabbitMQ, Snowflake, PostgreSQL, ...
+\end{minipage}
+\vspace{\baselineskip}
+\footnotetext[1]{\href{https://github.com/tenable/Tenable.ad-EventsLogs-Subscriber}{github.com/tenable/Tenable.ad-EventsLogs-Subscriber}}
+%----------------------------------------------------------------------------------------
+
+\end{document}
