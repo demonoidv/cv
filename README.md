@@ -6,4 +6,4 @@ There are several versions of it:
     - [French](./CV_Valentin_Sporer-detailed-fr.pdf)
     - [English](./CV_Valentin_Sporer-en.pdf)
 - Detailed 3 pages long CV:
-    - [French](./CV_extended_Valentin_Sporer-fr.pdf)
+    - [French](./CV_Valentin_Sporer-extended-fr.pdf)
